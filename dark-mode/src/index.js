@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import AppContainer from './common/containers/App';
 import './styles/_main.scss';
 import Routes from './routes';
+import { GeneralContextProvider } from "./context";
 
-ReactDOM.render(
-  <AppContainer>
-    <Routes />
-  </AppContainer>,
-  document.getElementById('root')
+
+const app = (
+  <GeneralContextProvider>
+    <AppContainer>
+      <Routes />
+    </AppContainer>
+  </GeneralContextProvider>
 );
+
+ReactDOM.render(app, document.getElementById('root'));
+
